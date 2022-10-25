@@ -14,6 +14,12 @@ function BeerPage(){
     },[])
 
     // console.log(beerData)
+
+    //this function will be passed to addbeerform' handle submit within the second then of the post request. Make sure to pass it down as a prop on line 26
+    // function displayAddedBeer(newBeer){
+    //     setBeerData([...beerData, newBeer])
+    // }
+    
     return(
         <>
         <Search />

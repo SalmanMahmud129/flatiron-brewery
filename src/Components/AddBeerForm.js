@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Form, Grid, Header} from "semantic-ui-react"
+import {Form, FormButton, Grid, Header} from "semantic-ui-react"
 
 function AddBeerForm() {
   const [formData, setFormData] = useState({
@@ -10,33 +10,75 @@ function AddBeerForm() {
     image_url: "",
     first_brewed: "",
     abv: "",
-    food_pairing: ""
+    food_pairing1: "",
+    food_pairing2: "",
+    food_pairing3: "",
   })
+
+  function handleChange(e){
+    console.log(e.target.value)
+    const {name, value} = e.target
+    setFormData({...formData, [name]:value})
+
+  }
+
+  function handleSubmit(){
+    const newDrink ={
+      id: "",
+      name: formData.name,
+      tagline: formData.name,
+      description: formData.description,
+      image_url: formData.image_url,
+      first_brewed: formData.first_brewed,
+      abv: formData.name,
+      food_paring: [formData.food_pairing1, formData.food_pairing2, formData.food_pairing3]
+
+    }
+
+    console.log(newDrink)
+
+    // const API = "https://api.punkapi.com/v2/beers/"
+
+    // fetch(API, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     "Accept": "application/json"
+    //   },
+    //   body: JSON.stringify(newDrink)
+    // })
+    // .then(resp => resp.json())
+    // .then(data => displayAddedBeer(data))
+  }
+
+  
   //form adds the name, tagline, description, image, first brewed, abv, food pairing
   return (
     <div>
       <Grid>
         <Grid.Row centered>
           <Grid.Column width={6}>
-          <Form>
+          <Form onSubmit={handleSubmit}>
             <Form.Group widths='equal' >
-              <Form.Input fluid label='name' placeholder='Enter Name of Beer' name="beerName" />
-              <Form.Input fluid label='tagline' placeholder='Enter Beer Tagline' />
-              <Form.Input fluid label='description' placeholder='Enter Description' />
+              <Form.Input fluid label='name' placeholder='Enter Name of Beer' name="name" value={formData.name} onChange={handleChange} />
+              <Form.Input fluid label='tagline' placeholder='Enter Beer Tagline' name="tagline" value={formData.tagline} onChange={handleChange} />
+              <Form.Input fluid label='description' placeholder='Enter Description' name="description" value={formData.description} onChange={handleChange}/>
             </Form.Group>
 
             <Form.Group widths='equal'>
-              <Form.Input fluid label='image' placeholder='Enter Image URL' />
-              <Form.Input fluid label='first brewed' placeholder='Enter Name of Beer' type='date'/>
-              <Form.Input fluid label='abv' placeholder='Enter ABV' />
+              <Form.Input fluid label='image' placeholder='Enter Image URL' name="image_url" value={formData.image_url} onChange={handleChange} />
+              <Form.Input fluid label='first brewed' placeholder='Enter Name of Beer' name="first_brewed" value={formData.first_brewed} type='date' onChange={handleChange}/>
+              <Form.Input fluid label='abv' placeholder='Enter ABV' name="abv" value={formData.abv} onChange={handleChange} />
             </Form.Group>
 
             <Header as='h5'> Add a Good Food Pairing!(Optional)</Header>
+
             <Form.Group widths="equal" label='Food Pairings (Optional)'>
-              <Form.Input fluid label='1' placeholder='Enter Food' />
-              <Form.Input fluid label='2' placeholder='Enter Food' />
-              <Form.Input fluid label='3' placeholder='Enter Food' />
+              <Form.Input fluid label='1' placeholder='Enter Food' name="food_pairing1" value={formData.food_pairing1} onChange={handleChange}/>
+              <Form.Input fluid label='2' placeholder='Enter Food' name="food_pairing2" value={formData.food_pairing2} onChange={handleChange}/>
+              <Form.Input fluid label='3' placeholder='Enter Food' name="food_pairing3" value={formData.food_pairing3} onChange={handleChange} />
             </Form.Group>
+            <FormButton>Submit</FormButton>
           </Form>
           </Grid.Column>
         </Grid.Row>
