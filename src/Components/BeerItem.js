@@ -1,12 +1,11 @@
 import React from 'react'
 import { Card, Image } from 'semantic-ui-react'
-import './BeerItem.css'
 
 function BeerItem({beer}) {
   // console.log(beer)
   return (
-    <Card raised >
-      <div class ='ui tiny image'>
+    <Card >
+      <div className='ui tiny images'>
         <Image src={beer.image_url} wrapped ui={false} />
       </div>
       <Card.Content>
