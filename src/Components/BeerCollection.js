@@ -4,9 +4,9 @@ import BeerItem from './BeerItem'
 
 function BeerCollection({beerData}) {
   const beerMap = beerData.map((beer)=> <BeerItem beer={beer}/>)
-  
+
   return (
-    <Card.Group itemsperRow={5}>{beerMap}</Card.Group>
+    <Card.Group itemsPerRow={5}>{beerMap}</Card.Group>
   )
 }
 
