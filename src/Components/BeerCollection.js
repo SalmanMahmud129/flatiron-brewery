@@ -1,9 +1,11 @@
 import React from 'react'
+import { Card } from 'semantic-ui-react'
+import BeerItem from './BeerItem'
 
 function BeerCollection({beerData}) {
-  // console.log(beerData)
+  const beerMap = beerData.map((beer)=> <BeerItem beer={beer}/>)
   return (
-    <div>Beers</div>
+    <Card.Group itemsperRow={5}>{beerMap}</Card.Group>
   )
 }
 
