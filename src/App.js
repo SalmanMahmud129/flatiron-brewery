@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from './Header'
 import BeerPage from './BeerPage'
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
 function App() {
