@@ -12,24 +12,24 @@ function BeerPage(){
         .then(resp => resp.json())
         .then(data => {
             setBeerData(data)
-            postDataLocally(data)
+            // postDataLocally(data)
         })
     },[])
 
 
-    const localAPI = "http://localhost:3001/beers"
-    function postDataLocally(beerData){
-        fetch(localAPI, {
-            method: "POST",
-            headers: {
-                "Content-Type" : "application/json",
-                "Accept" : "application/json"
-        },
-        body : JSON.stringify(beerData)
-        })
-        .then(resp => resp.json())
+    // const localAPI = "http://localhost:3001/beers"
+    // function postDataLocally(beerData){
+    //     fetch(localAPI, {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type" : "application/json",
+    //             "Accept" : "application/json"
+    //     },
+    //     body : JSON.stringify(beerData)
+    //     })
+    //     .then(resp => resp.json())
         
-    }
+    // }
 
     // console.log(beerData)
 

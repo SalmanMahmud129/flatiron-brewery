@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {Routes, Route} from 'react-router-dom'
 import NavBar from './NavBar'
 import BeerPage from './BeerPage'
+import BeerDetail from './BeerDetail'
 import AddBeerForm from './AddBeerForm'
 import Home from './Home'
 import './App.css';
@@ -14,8 +15,9 @@ function App() {
       <NavBar onChangePage={setPage} />
       <Routes>
         <Route path='/beers' element={<BeerPage />}/>
+        <Route path='/beers/:id' element={<BeerDetail/>}/>
         <Route path='/addbeer' element={<AddBeerForm />}/>
-        <Route exact path='/' element={<Home />} />
+        <Route path='/' element={<Home />} />
       </Routes>
     </div>
     // <div className="App">

@@ -1,11 +1,19 @@
 import React from 'react'
 import { Card, Image } from 'semantic-ui-react'
+import {useNavigate} from 'react-router-dom'
 
 function BeerItem({beer}) {
-  // console.log(beer)
-  return (
+ const navigate = useNavigate();
+
+ function showBeerDetail(){
+  // setBeerID(beer.id)
+  // console.log(beerID)
+  navigate(`/beers/${beer.id}`)
+ }
   
-    <Card className="beerImage">
+  return (
+
+    <Card className="beerImage" onClick={showBeerDetail}>
       <div>
         <Image className='ui tiny images'src={beer.image_url} wrapped ui={false} />
       </div>
