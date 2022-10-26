@@ -4,6 +4,7 @@ import { Card, Image } from 'semantic-ui-react'
 function BeerItem({beer}) {
   // console.log(beer)
   return (
+  
     <Card >
       <div className='ui tiny images'>
         <Image src={beer.image_url} wrapped ui={false} />
