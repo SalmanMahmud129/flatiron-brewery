@@ -3,13 +3,12 @@ import { Card, Image } from 'semantic-ui-react'
 import {useNavigate} from 'react-router-dom'
 
 function BeerItem({beer}) {
- const navigate = useNavigate();
+  
+  const navigate = useNavigate();
 
- function showBeerDetail(){
-  // setBeerID(beer.id)
-  // console.log(beerID)
-  navigate(`/beers/${beer.id}`)
- }
+  function showBeerDetail(){
+    navigate(`/beers/${beer.id}`)
+  }
   
   return (
 

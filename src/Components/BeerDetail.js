@@ -9,7 +9,7 @@ function BeerDetail(){
         fetch(`https://api.punkapi.com/v2/beers/${params.id}`)
         .then(resp=>resp.json())
         .then(data => setBeer(data[0]))
-    },[])
+    },[params.id])
 
     console.log(beer)
     return (
