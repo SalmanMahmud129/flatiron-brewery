@@ -6,8 +6,8 @@ function BeerItem({beer}) {
   // console.log(beer)
   return (
     <Card raised >
-      <div class ='ui tiny image'>
-        <Image src={beer.image_url} wrapped ui={false} />
+      <div class ='ui small image'>
+        <Image src={beer.image_url}  />
       </div>
       <Card.Content>
       <Card.Header>{beer.name}</Card.Header>
