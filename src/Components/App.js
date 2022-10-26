@@ -1,29 +1,29 @@
-import React from 'react'
-import Header from './Header'
+import React, {useState} from 'react'
+import {Routes, Route} from 'react-router-dom'
+import NavBar from './NavBar'
 import BeerPage from './BeerPage'
-// import logo from './logo.svg';
+import AddBeerForm from './AddBeerForm'
+import Home from './Home'
 import './App.css';
 
 function App() {
+  const [page, setPage] = useState('/')
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <Header />
-        <BeerPage />
-        {/* <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
-      </header>
+    <div>
+      <NavBar onChangePage={setPage} />
+      <Routes>
+        <Route path='/beers' element={<BeerPage />}/>
+        <Route path='/addbeer' element={<AddBeerForm />}/>
+        <Route exact path='/' element={<Home />} />
+      </Routes>
     </div>
+    // <div className="App">
+    //   <header className="App-header">
+    //     <NavBar />
+    //   </header>
+    //   <BeerPage />
+    // </div>
   );
 }
 
