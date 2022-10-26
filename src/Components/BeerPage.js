@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react"
-import AddBeerForm from "./AddBeerForm";
 import Search from "./Search";
 import BeerCollection from "./BeerCollection";
 
@@ -21,7 +20,6 @@ function BeerPage(){
     return(
         <>
         <Search search={search} setSearch={setSearch}/>
-        <AddBeerForm />
         <BeerCollection beerData={beerDisplay} />
         </>
 
