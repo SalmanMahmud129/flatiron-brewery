@@ -7,6 +7,7 @@ function BeerDetail() {
     const [beer, setBeer] = useState([])
     const params = useParams()
 
+
     useEffect(() => {
         fetch(`http://localhost:3001/beers/${params.id}`)
             .then(resp => resp.json())
@@ -25,7 +26,6 @@ function BeerDetail() {
     // console.log(isThereFoodPairings)
     // console.log(beer.food_pairing)
 
-
     return (
         <Item.Group className="beerDetail">
             <Item>
@@ -36,6 +36,7 @@ function BeerDetail() {
                     <Item.Meta>
                         <span>{beer.tagline}</span>
                     </Item.Meta>
+
                     <Item.Description>
                         <span>Brewed: {beer.first_brewed}</span>
                         <br></br>
@@ -49,6 +50,7 @@ function BeerDetail() {
                         </ul>
                     </Item.Description>
                 </Item.Content>
+
             </Item>
         </Item.Group>
         // <>
