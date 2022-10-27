@@ -12,7 +12,6 @@ function BeerDetail(){
         .then(data => setBeer(data[0]))
     },[params.id])
 
-    console.log(beer.food_pairing)
     return (
         <Item.Group className="beerDetail">
             <Item>
@@ -32,7 +31,7 @@ function BeerDetail(){
                     <strong>{beer.description}</strong>
                     <ul>
                         <strong>Food Pairings:</strong>
-                        <li>{beer.food_pairing}</li>                    
+                       {beer.food_pairing ? beer.food_pairing.map(food => <li>{food}</li>): null}                   
                     </ul>
                 </Item.Description>
             </Item.Content>
