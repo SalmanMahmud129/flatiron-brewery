@@ -1,3 +1,9 @@
+.body { 
+  background-image: url('wallpaperflare.com_wallpaper.jpg');
+  background-repeat: no-repeat;
+  object-fit: cover
+} 
+
 /* nav css */
 nav {
   background-color: #282c34;
