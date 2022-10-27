@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {Form, FormButton, Grid, Header} from "semantic-ui-react"
 
-function AddBeerForm() {
+function AddBeerForm({displayAddedBeer}) {
   const [formData, setFormData] = useState({
     id: "",
     name: "",
@@ -22,7 +22,8 @@ function AddBeerForm() {
 
   }
 
-  function handleSubmit(){
+  function handleSubmit(e){
+    e.preventDefault()
     const newDrink ={
       id: "",
       name: formData.name,
@@ -31,24 +32,26 @@ function AddBeerForm() {
       image_url: formData.image_url,
       first_brewed: formData.first_brewed,
       abv: formData.name,
-      food_paring: [formData.food_pairing1, formData.food_pairing2, formData.food_pairing3]
-
+      food_pairing: [formData.food_pairing1, formData.food_pairing2, formData.food_pairing3]
+      
     }
 
     console.log(newDrink)
+    // console.log(beerData)
+    
 
-    // const API = "https://api.punkapi.com/v2/beers/"
+    const API = "http://localhost:3001/beers"
 
-    // fetch(API, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     "Accept": "application/json"
-    //   },
-    //   body: JSON.stringify(newDrink)
-    // })
-    // .then(resp => resp.json())
-    // .then(data => displayAddedBeer(data))
+    fetch(API, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(newDrink)
+    })
+    .then(resp => resp.json())
+    .then(data => displayAddedBeer(data))
   }
 
   
@@ -91,3 +94,4 @@ function AddBeerForm() {
 }
 
 export default AddBeerForm
+
