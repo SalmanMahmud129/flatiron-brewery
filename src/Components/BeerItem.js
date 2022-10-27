@@ -17,7 +17,7 @@ function BeerItem({beer}) {
         <Image className='ui tiny images'src={beer.image_url} wrapped ui={false} />
       </div>
       <Card.Content>
-      <Card.Header>{beer.name}</Card.Header>
+      <Card.Header>{beer.name} </Card.Header>
       <Card.Meta>
         <span className='date'>Brewed: {beer.first_brewed}</span>
       </Card.Meta>
@@ -25,9 +25,9 @@ function BeerItem({beer}) {
         {beer.tagline}
       </Card.Description>
     </Card.Content>
-    {/* <Card.Content extra>
-     {beer.tagline}
-    </Card.Content> */}
+    <Card.Content extra>
+      abv: {beer.abv}
+    </Card.Content>
   </Card>
 )}
 

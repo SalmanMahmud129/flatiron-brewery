@@ -5,13 +5,14 @@ function BeerDetail(){
     const [beer, setBeer] = useState([])
     const params = useParams()
     
+    console.log(params)
     useEffect(()=> {
         fetch(`https://api.punkapi.com/v2/beers/${params.id}`)
         .then(resp=>resp.json())
         .then(data => setBeer(data[0]))
     },[params.id])
 
-    console.log(beer)
+    //add css to display beer information
     return (
     <>
      <h1>{beer.name}</h1>

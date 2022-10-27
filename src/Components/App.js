@@ -5,11 +5,10 @@ import BeerPage from './BeerPage'
 import BeerDetail from './BeerDetail'
 import AddBeerForm from './AddBeerForm'
 import Home from './Home'
-import './App.css';
 
 function App() {
   const [page, setPage] = useState('/')
-
+  document.body.style.backgroundColor = "#282c34"
   return (
     <div>
       <NavBar onChangePage={setPage} />
@@ -20,12 +19,6 @@ function App() {
         <Route path='/' element={<Home />} />
       </Routes>
     </div>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <NavBar />
-    //   </header>
-    //   <BeerPage />
-    // </div>
   );
 }
 

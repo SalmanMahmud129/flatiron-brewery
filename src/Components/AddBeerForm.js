@@ -60,15 +60,15 @@ function AddBeerForm() {
           <Grid.Column width={6}>
           <Form onSubmit={handleSubmit}>
             <Form.Group widths='equal' >
-              <Form.Input fluid label='name' placeholder='Enter Name of Beer' name="name" value={formData.name} onChange={handleChange} />
-              <Form.Input fluid label='tagline' placeholder='Enter Beer Tagline' name="tagline" value={formData.tagline} onChange={handleChange} />
-              <Form.Input fluid label='description' placeholder='Enter Description' name="description" value={formData.description} onChange={handleChange}/>
+              <Form.Input fluid label='Name' placeholder='Enter Name of Beer' name="name" value={formData.name} onChange={handleChange} />
+              <Form.Input fluid label='Tagline' placeholder='Enter Beer Tagline' name="tagline" value={formData.tagline} onChange={handleChange} />
+              <Form.Input fluid label='Description' placeholder='Enter Description' name="description" value={formData.description} onChange={handleChange}/>
             </Form.Group>
 
             <Form.Group widths='equal'>
-              <Form.Input fluid label='image' placeholder='Enter Image URL' name="image_url" value={formData.image_url} onChange={handleChange} />
-              <Form.Input fluid label='first brewed' placeholder='Enter Name of Beer' name="first_brewed" value={formData.first_brewed} type='date' onChange={handleChange}/>
-              <Form.Input fluid label='abv' placeholder='Enter ABV' name="abv" value={formData.abv} onChange={handleChange} />
+              <Form.Input fluid label='Image' placeholder='Enter Image URL' name="image_url" value={formData.image_url} onChange={handleChange} />
+              <Form.Input fluid label='First Brewed' placeholder='Enter Name of Beer' name="first_brewed" value={formData.first_brewed} type='date' onChange={handleChange}/>
+              <Form.Input fluid label='ABV' placeholder='Enter ABV' name="abv" value={formData.abv} onChange={handleChange} />
             </Form.Group>
 
             <Header as='h5'> Add a Good Food Pairing!(Optional)</Header>
