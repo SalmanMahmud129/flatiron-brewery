@@ -1,7 +1,10 @@
 import React, {useState} from 'react'
 import {Form, FormButton, Grid, Header} from "semantic-ui-react"
+import { useNavigate } from 'react-router-dom'
+
 
 function AddBeerForm({displayAddedBeer}) {
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     id: "",
     name: "",
@@ -48,13 +51,18 @@ function AddBeerForm({displayAddedBeer}) {
       body: JSON.stringify(newDrink)
     })
     .then(resp => resp.json())
-    .then(data => displayAddedBeer(data))
+    .then(data => {
+      displayAddedBeer(data)
+      navigate(`/beers/${data.id}`)
+    })
+    
+    
   }
 
   
   //form adds the name, tagline, description, image, first brewed, abv, food pairing
   return (
-    <div>
+    <div className='addForm'>
       <Grid>
         <Grid.Row centered>
           <Grid.Column width={6}>
@@ -78,7 +86,7 @@ function AddBeerForm({displayAddedBeer}) {
               <Form.Input fluid label='2' placeholder='Enter Food' name="food_pairing2" value={formData.food_pairing2} onChange={handleChange}/>
               <Form.Input fluid label='3' placeholder='Enter Food' name="food_pairing3" value={formData.food_pairing3} onChange={handleChange} />
             </Form.Group>
-            <FormButton>Submit</FormButton>
+            <FormButton >Submit</FormButton>
           </Form>
           </Grid.Column>
         </Grid.Row>

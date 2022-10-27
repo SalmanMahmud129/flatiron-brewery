@@ -1,7 +1,6 @@
 .body { 
   background-image: url('wallpaperflare.com_wallpaper.jpg');
-  background-repeat: no-repeat;
-  object-fit: cover
+  background-size: 100%;
 } 
 
 /* nav css */
@@ -39,9 +38,36 @@ nav a:active {
 
 #home {
   /* background-color: #282c34; */
+  padding-top: 250px;
   display: flex; 
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: firebrick
+}
+
+#home h1{
+  padding: 20px;
+  background-color: rgb(255, 255, 255, .75);
+  border: black ;
+  border-style: solid;
+  
+}
+
+form.ui.form{
+  padding: 60px;
+  background-color: rgb(255, 255, 255, .75);
+}
+
+.addForm{
+  padding-top: 100px;
+  /* display: flex; 
+  flex-direction: column;
+  
+  justify-content: center; */
+}
+
+.beerDetail{
+  padding: 100px;
+  background-color: rgb(255, 255, 255, .75);
 }
