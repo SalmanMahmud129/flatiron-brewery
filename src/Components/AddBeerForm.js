@@ -16,7 +16,7 @@ function AddBeerForm() {
   })
 
   function handleChange(e){
-    console.log(e.target.value)
+    // console.log(e.target.value)
     const {name, value} = e.target
     setFormData({...formData, [name]:value})
 

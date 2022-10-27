@@ -8,7 +8,7 @@ import Home from './Home'
 
 function App() {
   const [page, setPage] = useState('/')
-  document.body.style.backgroundColor = "#282c34"
+
   return (
     <div>
       <NavBar onChangePage={setPage} />

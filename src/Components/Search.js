@@ -8,7 +8,13 @@ function Search({search, setSearch}) {
   }
   
   return (
+    <div  style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+    }}>
     <Input icon='search' placeholder='Search...' value={search} onChange={handleChange} />
+    </div>
   )
 }
 

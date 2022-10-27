@@ -11,26 +11,25 @@ function BeerPage(){
         fetch('https://api.punkapi.com/v2/beers/')
         .then(resp => resp.json())
         .then(data => {
-            console.log(data)
             setBeerData(data)
-            postDataLocally(data)
+            // postDataLocally(data)
         })
     },[])
 
 
-    const localAPI = "http://localhost:3001/"
-    function postDataLocally(data){
-        fetch(localAPI, {
-            method: "POST",
-            headers: {
-                "Content-Type" : "application/json",
-                "Accept" : "application/json"
-        },
-        body : JSON.stringify(data)
-        })
-        .then(resp => resp.json())
+    // const localAPI = "http://localhost:3001/"
+    // function postDataLocally(data){
+    //     fetch(localAPI, {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type" : "application/json",
+    //             "Accept" : "application/json"
+    //     },
+    //     body : JSON.stringify(data)
+    //     })
+    //     .then(resp => resp.json())
         
-    }
+    // }
 
     // console.log(beerData)
 
@@ -48,7 +47,11 @@ function BeerPage(){
 
     return(
         <>
+        <br></br>
+        <br></br>
         <Search search={search} setSearch={setSearch}/>
+        <br></br>
+        <br></br>
         <BeerCollection beerData={beerDisplay} />
         </>
 
