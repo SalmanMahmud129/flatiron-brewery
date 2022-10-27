@@ -2,12 +2,13 @@ import React, {useState, useEffect} from 'react'
 import {Routes, Route} from 'react-router-dom'
 import NavBar from './NavBar'
 import BeerPage from './BeerPage'
+import BeerDetail from './BeerDetail'
 import AddBeerForm from './AddBeerForm'
 import Home from './Home'
-import './App.css';
 
 function App() {
   const [page, setPage] = useState('/')
+
   const [beerData, setBeerData] = useState([]);
   
 
@@ -59,21 +60,21 @@ function postDataLocally(beerData){
     }
 
     console.log(beerData)
+
+  document.body.style.backgroundColor = "#282c34"
+
   return (
     <div>
       <NavBar onChangePage={setPage} />
       <Routes>
+
         <Route path='/beers' element={<BeerPage beerData={beerData} />}/>
+        <Route path='/beers/:id' element={<BeerDetail/>}/>
         <Route path='/addbeer' element={<AddBeerForm displayAddedBeer={displayAddedBeer}/>}/>
-        <Route exact path='/' element={<Home />} />
+        <Route path='/' element={<Home />} />
+
       </Routes>
     </div>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <NavBar />
-    //   </header>
-    //   <BeerPage />
-    // </div>
   );
 }
 

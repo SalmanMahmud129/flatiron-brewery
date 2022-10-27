@@ -1,16 +1,23 @@
 import React from 'react'
 import { Card, Image } from 'semantic-ui-react'
+import {useNavigate} from 'react-router-dom'
 
 function BeerItem({beer}) {
-  // console.log(beer)
-  return (
   
-    <Card >
-      <div className='ui tiny images'>
-        <Image src={beer.image_url} wrapped ui={false} />
+  const navigate = useNavigate();
+
+  function showBeerDetail(){
+    navigate(`/beers/${beer.id}`)
+  }
+  
+  return (
+
+    <Card className="beerImage" onClick={showBeerDetail}>
+      <div>
+        <Image className='ui tiny images'src={beer.image_url} wrapped ui={false} />
       </div>
       <Card.Content>
-      <Card.Header>{beer.name}</Card.Header>
+      <Card.Header>{beer.name} </Card.Header>
       <Card.Meta>
         <span className='date'>Brewed: {beer.first_brewed}</span>
       </Card.Meta>
@@ -18,9 +25,9 @@ function BeerItem({beer}) {
         {beer.tagline}
       </Card.Description>
     </Card.Content>
-    {/* <Card.Content extra>
-     {beer.tagline}
-    </Card.Content> */}
+    <Card.Content extra>
+      abv: {beer.abv}
+    </Card.Content>
   </Card>
 )}
 
