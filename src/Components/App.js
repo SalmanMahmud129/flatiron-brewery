@@ -15,7 +15,7 @@ function App() {
     .then(resp => resp.json())
     .then(data => {
         setBeerData(data)
-        // postDataLocally(data)
+        
     })
 },[])
 
