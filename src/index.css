@@ -6,22 +6,27 @@
 /* nav css */
 nav {
   background-color: #282c34;
+  justify-content: center;
+  text-align: center;
+  font-size: x-large
+  
 }
 
 nav a {
   display: inline-block;
   margin: 1rem 2rem;
-  text-decoration: none;
+  text-decoration: underline;
   font-size: 1.2em;
   color: firebrick;
-  border-bottom: 2px solid firebrick;
+  /* border-bottom: 2px solid firebrick; */
   transition: 0.1s;
 }
 
 nav a:hover,
 nav a:active {
   color: tomato;
-  border-bottom: 2px solid tomato;
+  /* border-bottom: 2px solid tomato; */
+  text-decoration: underline;
 }
 
 /* nav a.active {
@@ -49,7 +54,15 @@ nav a:active {
 #home h1{
   padding: 20px;
   background-color: rgb(255, 255, 255, .75);
-  border: black ;
+  border: rgb(0, 0, 0,.75) ;
+  border-style: solid;
+  
+}
+
+#home h2{
+  padding: 20px;
+  background-color: rgb(255, 255, 255, .75);
+  border: rgb(0, 0, 0,.75) ;
   border-style: solid;
   
 }
@@ -57,6 +70,9 @@ nav a:active {
 form.ui.form{
   padding: 60px;
   background-color: rgb(255, 255, 255, .75);
+  border: rgb(178, 34, 34,.75);
+  border-style: solid;
+  
 }
 
 .addForm{
@@ -71,3 +87,28 @@ form.ui.form{
   padding: 100px;
   background-color: rgb(255, 255, 255, .75);
 }
+
+div.beerDetail{
+  /* background-color: rgb(0, 0, 0,.75) */
+  border: rgb(178, 34, 34,.75);
+  border-style: solid;
+}
+
+a.ui.card.beerImage{
+  border: rgb(178, 34, 34,.75);
+  border-style: solid;
+}
+
+/* div.content{
+  border: black;
+  border-style: solid;
+} */
+
+/* .ui.items>.item>.content{
+  border: black;
+  border-style: solid;
+} */
+/* .ui.items>.item>.image{
+  border: black;
+  border-style: solid;
+} */

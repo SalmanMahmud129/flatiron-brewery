@@ -32,7 +32,7 @@ function BeerDetail() {
                 <Item.Image size='small' src={beer.image_url} />
 
                 <Item.Content>
-                    <Item.Header>{beer.name}</Item.Header>
+                    <Item.Header><strong>{beer.name}</strong></Item.Header>
                     <Item.Meta>
                         <span>{beer.tagline}</span>
                     </Item.Meta>
