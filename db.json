@@ -354,16 +354,30 @@
     },
     {
       "id": 26,
-      "name": "test",
-      "tagline": "test",
-      "description": "test",
-      "image_url": "test",
-      "first_brewed": "2022-09-22",
-      "abv": "test",
+      "name": "Heineken",
+      "tagline": "Heineken",
+      "description": "Heineken Lager Beer, or simply Heineken is a pale lager beer with 5% alcohol by volume produced by the Dutch brewing company Heineken N.V. Heineken beer is sold in a green bottle with a red star.",
+      "image_url": "https://c-pi.niceshops.com/upload/image/product/large/default/heineken-beer-033-l-939036-en.1024x1024.jpg",
+      "first_brewed": "2004-10-29",
+      "abv": "Heineken",
       "food_pairing": [
-        "5",
-        "5",
-        "5"
+        "Burger King",
+        "Pasta",
+        "Steak"
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Heineken",
+      "tagline": "Heineken",
+      "description": "testDesc",
+      "image_url": "https://c-pi.niceshops.com/upload/image/product/large/default/heineken-beer-033-l-939036-en.1024x1024.jpg",
+      "first_brewed": "2022-11-30",
+      "abv": "Heineken",
+      "food_pairing": [
+        "Burger King",
+        "TestFood2",
+        "testFood3"
       ]
     }
   ]

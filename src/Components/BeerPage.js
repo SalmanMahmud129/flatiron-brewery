@@ -26,14 +26,14 @@ function BeerPage({beerData}){
 
     // console.log(beerData)
 
-    //this function will be passed to addbeerform' handle submit within the second then of the post request. Make sure to pass it down as a prop on line 26
+   
     
     
 
     
     //search by description
     const beerDisplay = beerData
-        .filter((beer) => beer.description.toLowerCase().includes(search.toLowerCase()))
+        .filter((beer) => beer.name.toLowerCase().includes(search.toLowerCase()))
         
 
     return(
